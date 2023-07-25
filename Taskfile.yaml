@@ -1,0 +1,9 @@
+version: "3"
+
+includes:
+  pichu:l0:
+    taskfile: tasks/Taskfile.landscape.yaml
+    vars:
+      PATH: landscapes/pichu/L0
+      LANDSCAPE: pichu
+      LAYER: L0

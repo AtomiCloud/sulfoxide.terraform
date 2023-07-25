@@ -1,0 +1,20 @@
+version: "3"
+
+tasks:
+  init:
+    dir: "{{.PATH}}"
+    desc: "Initialize landscape"
+    cmds:
+      - terraform init {{.CLI_ARGS}}
+
+  plan:
+    dir: "{{.PATH}}"
+    desc: "Plan landscape"
+    cmds:
+      - terraform plan -var-file secrets.tfvars {{.CLI_ARGS}}
+
+  apply:
+    dir: "{{.PATH}}"
+    desc: "Apply landscape"
+    cmds:
+      - terraform apply -var-file secrets.tfvars {{.CLI_ARGS}}
