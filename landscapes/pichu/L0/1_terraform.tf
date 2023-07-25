@@ -1,4 +1,13 @@
 terraform {
+
+  backend "remote" {
+    organization = "Atomi-Cloud"
+
+    workspaces {
+      name = "pichu-l0"
+    }
+  }
+
   required_providers {
     vultr = {
       source  = "vultr/vultr"

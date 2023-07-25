@@ -11,10 +11,10 @@ tasks:
     dir: "{{.PATH}}"
     desc: "Plan landscape"
     cmds:
-      - terraform plan -var-file secrets.tfvars {{.CLI_ARGS}}
+      - terraform plan {{.CLI_ARGS}}
 
   apply:
     dir: "{{.PATH}}"
     desc: "Apply landscape"
     cmds:
-      - terraform apply -var-file secrets.tfvars {{.CLI_ARGS}}
+      - terraform apply {{.CLI_ARGS}}
