@@ -7,3 +7,9 @@ includes:
       PATH: landscapes/pichu/L0
       LANDSCAPE: pichu
       LAYER: L0
+  pichu:l1:
+    taskfile: tasks/Taskfile.landscape.yaml
+    vars:
+      PATH: landscapes/pichu/L1
+      LANDSCAPE: pichu
+      LAYER: L1

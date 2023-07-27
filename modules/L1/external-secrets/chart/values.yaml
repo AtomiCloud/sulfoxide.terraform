@@ -1,0 +1,7 @@
+name: "aws-ssm-secret-store"
+labels: {}
+annotations: {}
+region: "ap-southeast-1"
+secretName: "secret-name"
+idKey: id_key
+secretKey: secret_key

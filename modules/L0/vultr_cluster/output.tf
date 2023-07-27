@@ -1,5 +1,6 @@
 output "kube_config" {
-  value = vultr_kubernetes.cluster.kube_config
+  value     = vultr_kubernetes.cluster.kube_config
+  sensitive = true
 
 }
 
@@ -10,4 +11,3 @@ output "endpoint" {
 output "id" {
   value = vultr_kubernetes.cluster.id
 }
-

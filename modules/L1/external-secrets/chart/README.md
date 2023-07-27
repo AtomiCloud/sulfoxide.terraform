@@ -1,0 +1,41 @@
+# gotrade-argo-init
+
+![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.0](https://img.shields.io/badge/AppVersion-0.1.0-informational?style=flat-square)
+
+Initialize the bare minimum resources needed for Argo Automation
+
+## Values
+
+| Key                        | Type   | Default                                                                                                                                                          | Description                                                  |
+| -------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| appName                    | string | `"app-of-apps"`                                                                                                                                                  | Name of the App of Apps Application                          |
+| appOfApp                   | object | `{"path":"chart","releaseName":"app-of-apps","repo":"https://github.com/tr8team/app-of-apps","valueFiles":["values.yaml","admin.values.yaml"],"version":"HEAD"}` | App of App specific configurations                           |
+| appOfApp.path              | string | `"chart"`                                                                                                                                                        | Path in App of App Git Repository to look for the helm chart |
+| appOfApp.releaseName       | string | `"app-of-apps"`                                                                                                                                                  | Release name of App of Apps Application                      |
+| appOfApp.repo              | string | `"https://github.com/tr8team/app-of-apps"`                                                                                                                       | Repo to App of App Helm Chart                                |
+| appOfApp.valueFiles        | list   | `["values.yaml","admin.values.yaml"]`                                                                                                                            | Value files to use for this specific deployment              |
+| appOfApp.version           | string | `"HEAD"`                                                                                                                                                         | Revision of App of Apps Helm Chart                           |
+| connectors.argoNamespace   | string | `"deployment-platform"`                                                                                                                                          | ArgoCD's namespace                                           |
+| connectors.argoReleaseName | string | `"deployment-platform"`                                                                                                                                          | ArgoCD's release name                                        |
+| connectors.caData          | string | `"ca"`                                                                                                                                                           | Okta SAML Certificate Authority data in base64 encoding      |
+| connectors.otelAddress     | string | `""`                                                                                                                                                             | Open Telemetry Address                                       |
+| connectors.privateDomain   | string | `"https://argo.com"`                                                                                                                                             | ArgoCD's internal domain name (within WARP/VPN)              |
+| connectors.publicDomain    | string | `"https://external.argo.com"`                                                                                                                                    | ArgoCD's external domain name                                |
+| connectors.rolePrefix      | string | `""`                                                                                                                                                             | Okta Role Prefixes for this ArgoCD                           |
+| connectors.ssoUrl          | string | `"https://okta.sso"`                                                                                                                                             | Okta SSO URL for SAML                                        |
+| credentials                | object | `{"orgUrl":"https://github.com/tr8team","password":"password","username":"devops@tr8.io"}`                                                                       | Initial credentials to install more applications             |
+| credentials.orgUrl         | string | `"https://github.com/tr8team"`                                                                                                                                   | Github organization which the credentials have access to     |
+| credentials.password       | string | `"password"`                                                                                                                                                     | API token for the account's credentials                      |
+| credentials.username       | string | `"devops@tr8.io"`                                                                                                                                                | Username for the account's credentials                       |
+| labels.landscape           | string | `"develop"`                                                                                                                                                      | L of the LPSD Service Tree convention                        |
+| labels.layer               | string | `"1"`                                                                                                                                                            | The Infrastructure Layer the application belongs to          |
+| labels.platform            | string | `"systems"`                                                                                                                                                      | P of the LPSD Service Tree convention                        |
+| labels.service             | string | `"deployment-platform"`                                                                                                                                          | S of the LPSD Service Tree convention                        |
+| labels.team                | string | `"ESD"`                                                                                                                                                          | Which team is in charge of this chart                        |
+| labels.version             | string | `"1.0.0"`                                                                                                                                                        | app image with version tag                                   |
+| namespace                  | string | `"deployment-platform"`                                                                                                                                          | Namespace to deploy the Application App of Apps              |
+| projectName                | string | `"bootstrap"`                                                                                                                                                    | Name of the Initial ArgoCD Project                           |
+
+---
+
+Autogenerated from chart metadata using [helm-docs vv1.11.0](https://github.com/norwoodj/helm-docs/releases/vv1.11.0)

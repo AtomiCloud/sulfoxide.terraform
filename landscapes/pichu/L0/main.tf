@@ -1,5 +1,5 @@
 module "main_cluster" {
-  source = "../../../modules/L0/cluster"
+  source = "../../../modules/L0/vultr_cluster"
 
   providers = {
     vultr = vultr.main
@@ -10,6 +10,6 @@ module "main_cluster" {
   landscape     = local.landscape
   max_nodes     = local.max_nodes
   min_nodes     = local.min_nodes
-  region        = local.region
+  region        = local.vultr_region
 
 }

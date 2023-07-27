@@ -4,18 +4,23 @@ terraform {
     organization = "Atomi-Cloud"
 
     workspaces {
-      name = "pichu-l0"
+      name = "pichu-l1"
     }
   }
 
   required_providers {
-    vultr = {
-      source  = "vultr/vultr"
-      version = "~> 2.15.1"
-    }
     aws = {
       source  = "hashicorp/aws"
       version = "~> 5.9.0"
     }
+    helm = {
+      source  = "hashicorp/helm"
+      version = "~> 2.10.1"
+    }
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+      version = "~> 2.22.0"
+    }
+
   }
 }
