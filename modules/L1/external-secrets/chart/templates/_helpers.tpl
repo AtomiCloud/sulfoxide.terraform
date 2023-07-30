@@ -60,10 +60,3 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
-
-{{- define "aws-ssm-secret-store.tr8labels" -}}
-tr8.io/chart: {{ include "aws-ssm-secret-store.chart" . }}
-{{- range $k, $v := .Values.labels }}
-"tr8.io/{{ $k }}": "{{ $v }}"
-{{- end }}
-{{- end }}
