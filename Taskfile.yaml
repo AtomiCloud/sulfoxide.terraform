@@ -1,6 +1,18 @@
 version: "3"
 
 includes:
+  suicune:l0:
+    taskfile: tasks/Taskfile.landscape.yaml
+    vars:
+      PATH: landscapes/suicune/L0
+      LANDSCAPE: suicune
+      LAYER: L0
+  suicune:l1:
+    taskfile: tasks/Taskfile.landscape.yaml
+    vars:
+      PATH: landscapes/suicune/L1
+      LANDSCAPE: suicune
+      LAYER: L1
   pichu:l0:
     taskfile: tasks/Taskfile.landscape.yaml
     vars:

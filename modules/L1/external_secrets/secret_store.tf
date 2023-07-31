@@ -19,7 +19,7 @@ resource "helm_release" "secret_store" {
       name = "aws-ssm-secret-store"
       labels = merge(local.labels, {
         "atomi.cloud/module" = "secret-store"
-        "atomi.cloud/bump"   = "1"
+        "atomi.cloud/bump"   = "2"
       })
       annotations = merge(local.annotations, {
         "atomi.cloud/module" = "secret-store"

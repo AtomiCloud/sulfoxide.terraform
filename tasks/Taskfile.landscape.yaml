@@ -7,6 +7,12 @@ tasks:
     cmds:
       - terraform init {{.CLI_ARGS}}
 
+  destroy:
+    dir: "{{.PATH}}"
+    desc: "Destroy landscape"
+    cmds:
+      - terraform destroy {{.CLI_ARGS}}
+
   plan:
     dir: "{{.PATH}}"
     desc: "Plan landscape"

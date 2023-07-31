@@ -1,5 +1,5 @@
 module "external-secrets" {
-  source = "../../../modules/L1/external-secrets"
+  source = "../../../modules/L1/external_secrets"
 
   providers = {
     aws        = aws.main

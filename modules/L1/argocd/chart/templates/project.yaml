@@ -1,0 +1,30 @@
+{{- range $k, $v := .Values.projects }}
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: {{ $k }}
+  labels:
+    {{ include "atomi-argo-init.labels" $ | nindent 4 }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    {{ include "atomi-argo-init.annotations" $ | nindent 4 }}
+    "helm.sh/hook": pre-install
+    "helm.sh/hook-weight": "-1"
+spec:
+  description: "{{ $v.desc }}"
+
+  sourceRepos:
+    - '*'
+
+  destinations:
+    - namespace: "*"
+      server: "*"
+
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+
+  orphanedResources:
+    warn: false
+  {{- end -}}
