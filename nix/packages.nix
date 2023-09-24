@@ -1,4 +1,4 @@
-{ pkgs, atomi, pkgs-jul-24-23 }:
+{ pkgs, atomi, atomi_classic, pkgs-sep-20-23 }:
 let
 
   all = {
@@ -6,11 +6,19 @@ let
       with atomi;
       {
         inherit
+          infisical
           pls;
       }
     );
-    jul-24-23 = (
-      with pkgs-jul-24-23;
+    atomipkgs_classic = (
+      with atomi_classic;
+      {
+        inherit
+          sg;
+      }
+    );
+    sep-20-23 = (
+      with pkgs-sep-20-23;
       {
         inherit
           coreutils
@@ -29,8 +37,9 @@ let
           terraform
 
           # lint
+          gitlint
+          shellcheck
           terraform-docs
-          infracost
           tfsec
           tflint
           ;
@@ -40,4 +49,5 @@ let
 in
 with all;
 atomipkgs //
-jul-24-23
+atomipkgs_classic //
+sep-20-23

@@ -1,6 +1,12 @@
 version: "3"
 
 tasks:
+  tf:
+    dir: "{{.PATH}}"
+    desc: "Initialize landscape"
+    cmds:
+      - terraform {{.CLI_ARGS}}
+
   init:
     dir: "{{.PATH}}"
     desc: "Initialize landscape"

@@ -9,10 +9,6 @@ terraform {
   }
 
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.9.0"
-    }
     helm = {
       source  = "hashicorp/helm"
       version = "~> 2.10.1"
@@ -23,7 +19,7 @@ terraform {
     }
     cloudflare = {
       source  = "cloudflare/cloudflare"
-      version = "~> 4.11"
+      version = "~> 4.14"
     }
   }
 }

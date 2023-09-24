@@ -15,6 +15,7 @@ with packages;
   ];
 
   main = [
+    infisical
     terraform
   ];
 
@@ -24,7 +25,6 @@ with packages;
 
     # additional linters
     terraform-docs
-    infracost
     tfsec
     tflint
   ];

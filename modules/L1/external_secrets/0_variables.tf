@@ -16,7 +16,8 @@ variable "service" {
   type = string
 }
 
-# aws
-variable "aws_region" {
-  type = string
+variable "root_secret" {
+  description = "Root secret for infisical, from secret of secrets vault"
+  type        = string
+  sensitive   = true
 }

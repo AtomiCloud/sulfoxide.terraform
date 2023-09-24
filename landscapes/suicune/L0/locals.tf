@@ -1,14 +1,12 @@
 locals {
-  # aws
-  aws_region = "ap-southeast-1"
-
   # main cluster
   digital_ocean_region = "sgp1"
 
-  landscape = "suicune"
+  landscape = local.landscapes.suicune.slug
 
   clusters = {
     opal = "opal"
+    ruby = "ruby"
   }
 
   instance_type = "s-2vcpu-4gb"

@@ -1,27 +1,18 @@
 version: "3"
 
 includes:
+  setup: tasks/Taskfile.setup.yaml
   suicune:l0:
     taskfile: tasks/Taskfile.landscape.yaml
     vars:
       PATH: landscapes/suicune/L0
-      LANDSCAPE: suicune
-      LAYER: L0
   suicune:l1:
     taskfile: tasks/Taskfile.landscape.yaml
     vars:
       PATH: landscapes/suicune/L1
-      LANDSCAPE: suicune
-      LAYER: L1
-  pichu:l0:
-    taskfile: tasks/Taskfile.landscape.yaml
-    vars:
-      PATH: landscapes/pichu/L0
-      LANDSCAPE: pichu
-      LAYER: L0
-  pichu:l1:
-    taskfile: tasks/Taskfile.landscape.yaml
-    vars:
-      PATH: landscapes/pichu/L1
-      LANDSCAPE: pichu
-      LAYER: L1
+
+tasks:
+  sync:
+    desc: Sync static and secrets
+    cmds:
+      - ./scripts/local/sync.sh

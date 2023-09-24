@@ -21,10 +21,14 @@ variable "cloudflare_zone" {
   type        = string
 }
 
+variable "cloudflare_gateway_posture_rule_id" {
+  description = "Cloudflare Require WARP posture rule ID"
+  type        = string
+}
 
 # app configuration
 variable "hostname" {
-  description = "Hpstname of the application"
+  description = "Hostname of the application"
   type        = string
 }
 

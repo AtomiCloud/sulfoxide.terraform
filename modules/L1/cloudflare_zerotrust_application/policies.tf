@@ -58,7 +58,9 @@ resource "cloudflare_access_policy" "allow_policy" {
   }
 
   require {
-    device_posture = [cloudflare_device_posture_rule.warp.id]
+    device_posture = [
+      var.cloudflare_gateway_posture_rule_id
+    ]
   }
 }
 

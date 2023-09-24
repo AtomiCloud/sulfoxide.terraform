@@ -7,11 +7,10 @@ terraform {
       name = "suicune-l0"
     }
   }
-
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.9"
+    infisical = {
+      source  = "Infisical/infisical"
+      version = "0.3.2"
     }
     digitalocean = {
       source  = "digitalocean/digitalocean"

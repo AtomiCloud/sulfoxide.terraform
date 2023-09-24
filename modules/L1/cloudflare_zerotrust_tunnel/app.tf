@@ -5,8 +5,9 @@ module "applications" {
   source = "../cloudflare_zerotrust_application"
 
   # cloudflare config
-  cloudflare_account_id = var.cloudflare_account_id
-  cloudflare_zone       = var.cloudflare_zone
+  cloudflare_account_id              = var.cloudflare_account_id
+  cloudflare_zone                    = var.cloudflare_zone
+  cloudflare_gateway_posture_rule_id = var.cloudflare_gateway_posture_rule_id
 
   # service tree
   cluster   = var.cluster

@@ -21,6 +21,11 @@ variable "cloudflare_zone" {
   type        = string
 }
 
+variable "cloudflare_gateway_posture_rule_id" {
+  description = "Cloudflare Gateway posture rule ID"
+  type        = string
+}
+
 variable "ingress_fallback" {
   description = "Ingress Fallback service"
   type        = string
