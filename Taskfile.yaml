@@ -10,6 +10,10 @@ includes:
     taskfile: tasks/Taskfile.landscape.yaml
     vars:
       PATH: landscapes/suicune/L1
+  arceus:
+    taskfile: tasks/Taskfile.landscape.yaml
+    vars:
+      PATH: landscapes/arceus
 
 tasks:
   sync:

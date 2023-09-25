@@ -8,9 +8,9 @@ terraform {
     }
   }
   required_providers {
-    infisical = {
-      source  = "Infisical/infisical"
-      version = "0.3.2"
+    doppler = {
+      source  = "DopplerHQ/doppler"
+      version = "~> 1.3"
     }
     digitalocean = {
       source  = "digitalocean/digitalocean"

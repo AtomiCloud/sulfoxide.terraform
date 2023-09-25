@@ -1,15 +1,8 @@
-module "cluster_connector" {
-  source = "../write_infisical"
-
-  infisical_host       = var.infisical_host
-  infisical_root_token = var.infisical_root_token
-  landscape            = var.landscape
-  project_name         = var.project_name
-  root_path            = var.path_secret
-
-  name = var.secret_name
-
-  secret = jsonencode({
+resource "doppler_secret" "cluster_connector" {
+  config  = var.landscape
+  name    = var.secret_name
+  project = var.project_name
+  value = jsonencode({
     name   = var.name
     server = var.server
     config = var.config

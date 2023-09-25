@@ -23,11 +23,8 @@ locals {
 
   namespace = "secrets-engine"
 
-  aws_key_id_key     = "aws_key_id"
-  aws_key_secret_key = "aws_key_secret"
-
-
-  secret_name = "external-secret-operator-aws-credentials"
+  secret_name = "external-secret-operator-doppler"
+  secret_key  = "DOPPLER_TOKEN"
 
   lps      = "${var.landscape}-${var.platform}-${var.service}"
   lps-fqdn = "${var.landscape}.${var.platform}.${var.service}"

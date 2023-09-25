@@ -2,7 +2,7 @@ provider "cloudflare" {
 
   alias = "main"
 
-  api_token = module.terraform_generic_secrets.secrets["CLOUDFLARE_TOKEN"].value
+  api_token = data.doppler_secrets.arceus_sulfoxide_terraform.map.CLOUDFLARE_TOKEN
 }
 
 # OPAL

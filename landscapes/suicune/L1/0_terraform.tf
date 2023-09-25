@@ -9,6 +9,10 @@ terraform {
   }
 
   required_providers {
+    doppler = {
+      source  = "DopplerHQ/doppler"
+      version = "~> 1.3"
+    }
     helm = {
       source  = "hashicorp/helm"
       version = "~> 2.10.1"

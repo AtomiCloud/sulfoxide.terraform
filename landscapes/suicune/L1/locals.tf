@@ -2,6 +2,7 @@ locals {
 
   # service tree
   landscape = local.landscapes.suicune.slug
+
   clusters = {
     opal = "opal"
     ruby = "ruby"

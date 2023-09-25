@@ -5,19 +5,22 @@ variable "additional_labels" {
 
 # service tree
 variable "landscape" {
-  type = string
+  description = "Name of the landscape"
+  type        = string
 }
 
 variable "platform" {
-  type = string
+  description = "Name of the platform"
+  type        = string
 }
 
 variable "service" {
-  type = string
+  description = "Name of the service"
+  type        = string
 }
 
 variable "root_secret" {
-  description = "Root secret for infisical, from secret of secrets vault"
+  description = "Root secret for doppler, for secret of secrets vault"
   type        = string
   sensitive   = true
 }

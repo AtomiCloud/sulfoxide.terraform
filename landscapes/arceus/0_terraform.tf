@@ -1,4 +1,13 @@
 terraform {
+
+  backend "remote" {
+    organization = "Atomi-Cloud"
+
+    workspaces {
+      name = "arceus"
+    }
+  }
+
   required_providers {
     doppler = {
       source  = "DopplerHQ/doppler"

@@ -1,6 +1,7 @@
 locals {
   prefix = "${title(local.landscape)} ${title(local.clusters.opal_ruby)}"
 }
+
 module "opal_ruby_ingress" {
   source = "../../../modules/L1/cloudflare_zerotrust_tunnel"
 
@@ -39,16 +40,9 @@ module "opal_ruby_ingress" {
   ]
 }
 
-module "opal_ruby_ingress_token" {
-  source = "../../../modules/L0/write_infisical"
-
-  infisical_host       = local.infisical_url
-  infisical_root_token = var.infisical_token
-  landscape            = local.landscape
-  name                 = "OPAL_RUBY_CLOUDFLARE_INGRESS_TOKEN"
-  project_name         = "${upper(local.platforms.sulfoxide.slug)}_${upper(local.platforms.sulfoxide.services.argocd.slug)}"
-  root_path            = "/auto"
-  secret               = module.opal_ruby_ingress.tunnel_token
-
-  delete = false
+resource "doppler_secret" "opal_ruby_ingress" {
+  config  = local.landscape
+  name    = "OPAL_RUBY_INGRESS_TOKEN"
+  project = "${local.platforms.sulfoxide.slug}-${local.platforms.sulfoxide.services.argocd.slug}"
+  value   = module.opal_ruby_ingress.tunnel_token
 }

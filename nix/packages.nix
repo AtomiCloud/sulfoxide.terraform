@@ -35,6 +35,7 @@ let
 
           # main
           terraform
+          doppler
 
           # lint
           gitlint

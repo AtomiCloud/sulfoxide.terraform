@@ -1,0 +1,17 @@
+apiVersion: external-secrets.io/v1beta1
+kind: ClusterSecretStore
+metadata:
+  name: {{ .Values.name }}
+  annotations:
+    {{- toYaml .Values.annotations | nindent 4 }}
+  labels:
+    {{- toYaml .Values.labels | nindent 4 }}
+spec:
+  provider:
+    doppler:
+      auth:
+        secretRef:
+          dopplerToken:
+            name: {{ .Values.secretName }}
+            key: {{ .Values.secretKey }}
+            namespace: {{ .Release.Namespace }}

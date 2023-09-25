@@ -15,7 +15,7 @@ with packages;
   ];
 
   main = [
-    infisical
+    doppler
     terraform
   ];
 
@@ -24,6 +24,7 @@ with packages;
     treefmt
 
     # additional linters
+    infisical
     terraform-docs
     tfsec
     tflint

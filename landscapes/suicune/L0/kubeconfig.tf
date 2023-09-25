@@ -2,12 +2,8 @@ module "kubeconfig_opal" {
 
   source = "../../../modules/L0/connector_secret"
 
-  infisical_host       = local.infisical_url
-  infisical_root_token = var.infisical_token
-
   landscape    = local.landscape
-  path_secret  = "/"
-  project_name = "KUBERNETES_ACCESS"
+  project_name = "kubernetes-access"
   secret_name  = "OPAL_KUBECONFIG"
 
   name   = module.cluster_opal.name

@@ -1,9 +1,13 @@
-module "terraform_generic_secrets" {
-  source = "../../../modules/L0/read_infisical"
+provider "doppler" {
+  doppler_token = var.doppler_token
+}
 
-  infisical_host       = local.infisical_url
-  infisical_root_token = var.infisical_token
-  landscape            = "main"
-  project_name         = "${upper(local.platforms.sulfoxide.slug)}_${upper(local.platforms.sulfoxide.services.generic.slug)}"
-  root_path            = "/"
+data "doppler_secrets" "suicune_sulfoxide_terraform" {
+  config  = local.landscapes.suicune.slug
+  project = "${local.platforms.sulfoxide.slug}-${local.platforms.sulfoxide.services.terraform.slug}"
+}
+
+data "doppler_secrets" "arceus_sulfoxide_terraform" {
+  config  = local.landscapes.arceus.slug
+  project = "${local.platforms.sulfoxide.slug}-${local.platforms.sulfoxide.services.terraform.slug}"
 }

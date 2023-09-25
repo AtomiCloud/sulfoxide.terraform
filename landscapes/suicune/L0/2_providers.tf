@@ -1,9 +1,9 @@
 provider "digitalocean" {
   alias = "opal"
-  token = module.terraform_suicune_secrets.secrets["OPAL_DIGITALOCEAN_TOKEN"].value
+  token = data.doppler_secrets.sulfoxide_terraform.map.OPAL_DIGITALOCEAN_TOKEN
 }
 
 #provider "digitalocean" {
 #  alias = "ruby"
-#  token = data.aws_ssm_parameter.do_token_pichu_opal.value
+#  token = data.doppler_secrets.sulfoxide_terraform.map.RUBY_DIGITALOCEAN_TOKEN
 #}
