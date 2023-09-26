@@ -10,6 +10,14 @@ includes:
     taskfile: tasks/Taskfile.landscape.yaml
     vars:
       PATH: landscapes/suicune/L1
+  entei:l0:
+    taskfile: tasks/Taskfile.landscape.yaml
+    vars:
+      PATH: landscapes/entei/L0
+  entei:l1:
+    taskfile: tasks/Taskfile.landscape.yaml
+    vars:
+      PATH: landscapes/entei/L1
   arceus:
     taskfile: tasks/Taskfile.landscape.yaml
     vars:

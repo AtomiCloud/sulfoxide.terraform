@@ -3,6 +3,6 @@ provider "doppler" {
 }
 
 data "doppler_secrets" "sulfoxide_terraform" {
-  config  = local.landscapes.suicune.slug
+  config  = local.landscapes.entei.slug
   project = "${local.platforms.sulfoxide.slug}-${local.platforms.sulfoxide.services.terraform.slug}"
 }

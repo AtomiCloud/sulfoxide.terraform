@@ -4,7 +4,7 @@ terraform {
     organization = "Atomi-Cloud"
 
     workspaces {
-      name = "suicune-l0"
+      name = "entei-l0"
     }
   }
   required_providers {

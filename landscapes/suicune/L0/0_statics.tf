@@ -18,23 +18,68 @@ locals {
         }
         argocd = {
           name        = "ArgoCD"
-          slug        = "argocd"
-          description = "ArgoCD"
+          slug        = "helium"
+          description = "Deployment platform using GitOps"
         }
-        backup = {
-          name        = "Backup Platform"
-          slug        = "backup-platform"
-          description = "Kubernetes backup platform"
+        backup_engine = {
+          name        = "Backup Engine"
+          slug        = "fluorine"
+          description = "Velero as the backup engine for Kubernetes"
         }
         secrets_engine = {
           name        = "Secrets Engine"
-          slug        = "secrets-operator"
-          description = "Secrets Engine"
+          slug        = "cobalt"
+          description = "External Secrets to sync secrets from doppler"
         }
         internal_ingress = {
           name        = "Internal Ingress"
-          slug        = "internal-ingress"
-          description = "Internal ingress with VPN"
+          slug        = "boron"
+          description = "Internal Ingress with cloudflared"
+        }
+        external_ingress = {
+          name        = "External Ingress"
+          slug        = "oxygen"
+          description = "External Ingress with Kong"
+        }
+        scaler = {
+          name        = "Pod Autoscaler"
+          slug        = "iron"
+          description = "KEDA scaler for pods"
+        }
+        cluster_issuer = {
+          name        = "Cluster Issuer"
+          slug        = "zinc"
+          description = "Cluster Issuer for Certificate"
+        }
+        cert_manager = {
+          name        = "Cert Manager"
+          slug        = "sulfur"
+          description = "Certificate Issuing operator"
+        }
+        reloader = {
+          name        = "Reloader"
+          slug        = "chlorine"
+          description = "Reloader"
+        }
+        policy_engine = {
+          name        = "Policy Engine"
+          slug        = "argon"
+          description = "Kyverno operator"
+        }
+        policies = {
+          name        = "Policies"
+          slug        = "sodium"
+          description = "Kyverno policies"
+        }
+        otel_collector = {
+          name        = "OpenTelemetry Collector"
+          slug        = "silicon"
+          description = "OpenTelemetry Collector"
+        }
+        otel_operator = {
+          name        = "OpenTelemetry Operator"
+          slug        = "lithium"
+          description = "OpenTelemetry Operator"
         }
       }
     }

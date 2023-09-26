@@ -1,7 +1,7 @@
 locals {
 
   # service tree
-  landscape = local.landscapes.suicune.slug
+  landscape = local.landscapes.entei.slug
 
   clusters = {
     opal = "opal"

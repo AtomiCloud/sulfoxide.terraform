@@ -10,6 +10,6 @@ module "velero_backup_r2" {
   cf_region     = local.cf_region
   landscape     = local.landscape
   platform      = local.platforms.sulfoxide.slug
-  service       = local.platforms.sulfoxide.services.backup.slug
+  service       = local.platforms.sulfoxide.services.backup_engine.slug
 
 }

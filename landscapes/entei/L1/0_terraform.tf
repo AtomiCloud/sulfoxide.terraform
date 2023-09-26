@@ -4,7 +4,7 @@ terraform {
     organization = "Atomi-Cloud"
 
     workspaces {
-      name = "suicune-l1"
+      name = "entei-l1"
     }
   }
 

@@ -34,7 +34,27 @@ module "sulfoxide_argocd_doppler" {
   platform = local.platforms.sulfoxide.slug
   service  = local.platforms.sulfoxide.services.argocd.slug
 
-  description = "Secrets for ArgoCD for bootstrap engine for AtomiCloud's infrastructure"
+  description = "Secrets for ${local.platforms.sulfoxide.services.argocd.description}"
+  sos_project = local.sos_project
+
+  store_service_token = true
+}
+
+module "sulfoxide_internal_ingress_doppler" {
+  source = "../../modules/L0/doppler"
+
+  landscapes = {
+    (local.landscapes.suicune.slug) = local.landscapes.suicune.name
+    (local.landscapes.entei.slug)   = local.landscapes.entei.name
+
+    (local.landscapes.pichu.slug)   = local.landscapes.pichu.name
+    (local.landscapes.pikachu.slug) = local.landscapes.pikachu.name
+    (local.landscapes.raichu.slug)  = local.landscapes.raichu.name
+  }
+  platform = local.platforms.sulfoxide.slug
+  service  = local.platforms.sulfoxide.services.internal_ingress.slug
+
+  description = "Secrets for ${local.platforms.sulfoxide.services.internal_ingress.description}"
   sos_project = local.sos_project
 
   store_service_token = true
