@@ -152,4 +152,20 @@ locals {
 
   }
 
+
+  doppler_landscapes = {
+    a = {
+      (local.landscapes.suicune.slug) = local.landscapes.suicune.name
+    }
+    v = {
+      (local.landscapes.pichu.slug)   = local.landscapes.pichu.name
+      (local.landscapes.pikachu.slug) = local.landscapes.pikachu.name
+      (local.landscapes.raichu.slug)  = local.landscapes.raichu.name
+    }
+    p = {
+      (local.landscapes.entei.slug) = local.landscapes.entei.name
+
+    }
+  }
+
 }
