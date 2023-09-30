@@ -26,7 +26,7 @@ module "opal_ruby_ingress" {
       idp                  = ["saml"]
 
       path    = "/*"
-      service = "http://argocd-server.deployment-platform.svc.cluster.local:443"
+      service = "http://sulfoxide-helium-argocd-server.sulfoxide-helium.svc.cluster.local:443"
 
       warp          = true
       email_domains = ["atomi.cloud"]
