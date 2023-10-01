@@ -1,1 +1,1 @@
-doppler_token        = "{{.DOPPLER_TOKEN}}"
+doppler_token        = "{{.MANUAL_DOPPLER_TOKEN}}"

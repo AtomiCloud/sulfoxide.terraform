@@ -2,7 +2,7 @@ provider "cloudflare" {
 
   alias = "main"
 
-  api_token = data.doppler_secrets.arceus_sulfoxide_terraform.map.CLOUDFLARE_TOKEN
+  api_token = data.doppler_secrets.arceus_sulfoxide_terraform.map.MANUAL_CLOUDFLARE_TOKEN
 }
 
 # OPAL
@@ -48,5 +48,3 @@ provider "kubernetes" {
 #  cluster_ca_certificate = base64decode(local.ruby_cluster.kube_config[0].cluster_ca_certificate)
 #  token                  = local.ruby_cluster.kube_config[0].token
 #}
-
-
