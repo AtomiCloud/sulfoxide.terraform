@@ -187,3 +187,19 @@ module "sulfoxide_cobalt_doppler" {
 
   store_service_token = true
 }
+
+# External DNS
+module "sulfoxide_tin_doppler" {
+  source = "../../modules/L0/doppler"
+
+  landscapes = merge(local.doppler_landscapes.p)
+  platform   = local.platforms.sulfoxide.slug
+  service    = local.platforms.sulfoxide.services.external_dns.slug
+
+  description = "Secrets for ${local.platforms.sulfoxide.services.external_dns.description}"
+  sos_project = local.sos_project
+
+  store_service_token = true
+}
+
+

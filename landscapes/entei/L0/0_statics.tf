@@ -81,6 +81,16 @@ locals {
           slug        = "lithium"
           description = "OpenTelemetry Operator"
         }
+        traefik = {
+          name        = "Traefik"
+          slug        = "gold"
+          description = "Traefik"
+        }
+        external_dns = {
+          name        = "External DNS"
+          slug        = "tin"
+          description = "External DNS"
+        }
       }
     }
 
