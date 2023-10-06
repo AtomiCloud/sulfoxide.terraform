@@ -21,7 +21,7 @@ locals {
     "atomi.cloud/layer"     = "1"
   }, var.additional_labels)
 
-  namespace = "${var.platform}-${var.service}"
+  namespace = var.platform
 
   secret_name = "${var.platform}-${var.service}-secret-operator-doppler"
   secret_key  = "DOPPLER_TOKEN"
