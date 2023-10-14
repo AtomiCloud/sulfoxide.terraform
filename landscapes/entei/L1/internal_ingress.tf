@@ -31,7 +31,7 @@ module "opal_ruby_ingress" {
 
       bypass_everyone = false
       bypass_ips      = []
-    }
+    },
   ]
 }
 

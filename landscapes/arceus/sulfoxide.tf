@@ -202,4 +202,19 @@ module "sulfoxide_tin_doppler" {
   store_service_token = true
 }
 
+# Virtual Cluster
+module "sulfoxide_iodine_doppler" {
+  source = "../../modules/L0/doppler"
+
+  landscapes = merge(local.doppler_landscapes.p)
+  platform   = local.platforms.sulfoxide.slug
+  service    = local.platforms.sulfoxide.services.vcluster.slug
+
+  description = "Secrets for ${local.platforms.sulfoxide.services.vcluster.description}"
+  sos_project = local.sos_project
+
+  store_service_token = true
+}
+
+
 

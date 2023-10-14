@@ -9,6 +9,10 @@ terraform {
   }
 
   required_providers {
+    neon = {
+      source  = "kislerdm/neon"
+      version = "~> 0.2"
+    }
     doppler = {
       source  = "DopplerHQ/doppler"
       version = "~> 1.3"

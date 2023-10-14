@@ -5,6 +5,15 @@ provider "cloudflare" {
   api_token = data.doppler_secrets.arceus_sulfoxide_terraform.map.MANUAL_CLOUDFLARE_TOKEN
 }
 
+provider "neon" {
+
+  alias   = "main"
+  api_key = data.doppler_secrets.arceus_sulfoxide_terraform.map.MANUAL_NEON_TOKEN
+
+}
+
+
+
 # OPAL
 provider "helm" {
 
@@ -17,15 +26,15 @@ provider "helm" {
   }
 }
 
-
 provider "kubernetes" {
-
   alias = "opal"
 
   host                   = local.opal_cluster.kube_config[0].host
   cluster_ca_certificate = base64decode(local.opal_cluster.kube_config[0].cluster_ca_certificate)
   token                  = local.opal_cluster.kube_config[0].token
 }
+
+
 
 # RUBY
 #provider "helm" {

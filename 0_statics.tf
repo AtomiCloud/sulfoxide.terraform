@@ -1,5 +1,11 @@
 locals {
 
+
+  regions = {
+    neon    = "aws-ap-southeast-1"
+    upstash = "ap-southeast-1"
+  }
+
   platforms = {
 
     sulfoxide = {
@@ -38,8 +44,8 @@ locals {
         }
         external_ingress = {
           name        = "External Ingress"
-          slug        = "oxygen"
-          description = "External Ingress with Kong"
+          slug        = "gold"
+          description = "External Ingress with nginx"
         }
         scaler = {
           name        = "Pod Autoscaler"
@@ -81,15 +87,15 @@ locals {
           slug        = "lithium"
           description = "OpenTelemetry Operator"
         }
-        traefik = {
-          name        = "Traefik"
-          slug        = "gold"
-          description = "Traefik"
-        }
         external_dns = {
           name        = "External DNS"
           slug        = "tin"
           description = "External DNS"
+        }
+        vcluster = {
+          name        = "Virtual Cluster"
+          slug        = "iodine"
+          description = "Virtual clusters with vcluster"
         }
       }
     }
