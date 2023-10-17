@@ -9,6 +9,10 @@ terraform {
   }
 
   required_providers {
+    digitalocean = {
+      source  = "digitalocean/digitalocean"
+      version = "~> 2.30"
+    }
     neon = {
       source  = "kislerdm/neon"
       version = "~> 0.2"

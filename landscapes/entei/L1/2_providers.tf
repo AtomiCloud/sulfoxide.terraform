@@ -15,6 +15,11 @@ provider "neon" {
 
 
 # OPAL
+provider "digitalocean" {
+  alias = "opal"
+  token = data.doppler_secrets.entei_sulfoxide_terraform.map.OPAL_DIGITALOCEAN_TOKEN
+}
+
 provider "helm" {
 
   alias = "opal"

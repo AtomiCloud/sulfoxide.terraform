@@ -2,8 +2,9 @@ locals {
 
 
   regions = {
-    neon    = "aws-ap-southeast-1"
-    upstash = "ap-southeast-1"
+    neon          = "aws-ap-southeast-1"
+    upstash       = "ap-southeast-1"
+    digital_ocean = "sgp1"
   }
 
   platforms = {
