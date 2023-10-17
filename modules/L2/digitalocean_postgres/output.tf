@@ -1,10 +1,9 @@
 output "username" {
-  value = { for key, role in digitalocean_database_user.this : key => role.name }
+  value = digitalocean_database_cluster.this.user
 }
 
 output "password" {
-  value = { for key, role in digitalocean_database_user.this : key => role.password }
-
+  value = digitalocean_database_cluster.this.password
 }
 
 output "host" {
@@ -14,6 +13,10 @@ output "host" {
 
 output "db_name" {
   value = { for key, db in digitalocean_database_db.this : key => db.name }
+}
+
+output "port" {
+  value = digitalocean_database_cluster.this.port
 }
 
 output "ca" {

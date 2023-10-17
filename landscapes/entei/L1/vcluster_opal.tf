@@ -8,7 +8,7 @@ module "opal_vcluster_db" {
   landscape = local.landscape
   platform  = local.platforms.sulfoxide.slug
   service   = local.platforms.sulfoxide.services.vcluster.slug
-  module    = "database-pichu"
+  module    = "pichu-postgresql"
 
 
   databases = {
@@ -19,19 +19,18 @@ module "opal_vcluster_db" {
   region = local.regions.digital_ocean
 }
 
-
 resource "doppler_secret" "entei_vcluster_db_endpoint" {
-  for_each = module.opal_vcluster_db.username
+  for_each = module.opal_vcluster_db.db_name
 
   project = "${local.platforms.sulfoxide.slug}-${local.platforms.sulfoxide.services.vcluster.slug}"
   config  = local.landscape
 
   name  = "${upper(each.key)}_K3S_DATASTORE_ENDPOINT"
-  value = "postgres://${each.value}:${module.opal_vcluster_db.password[each.key]}@${module.opal_vcluster_db.host}/${module.opal_vcluster_db.db_name[each.key]}"
+  value = "postgres://${module.opal_vcluster_db.username}:${module.opal_vcluster_db.password}@${module.opal_vcluster_db.host}:${module.opal_vcluster_db.port}/${module.opal_vcluster_db.db_name[each.key]}?sslmode=require"
 }
 
 resource "doppler_secret" "entei_vcluster_db_ca" {
-  for_each = module.opal_vcluster_db.username
+  for_each = module.opal_vcluster_db.db_name
 
   project = "${local.platforms.sulfoxide.slug}-${local.platforms.sulfoxide.services.vcluster.slug}"
   config  = local.landscape
