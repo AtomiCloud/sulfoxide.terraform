@@ -5,7 +5,10 @@ locals {
     neon          = "aws-ap-southeast-1"
     upstash       = "ap-southeast-1"
     digital_ocean = "sgp1"
+    cloudflare    = "APAC"
   }
+  cf_account_id = "177aa484a66427793543c5e958f8d020"
+  sos_project   = "${local.platforms.sulfoxide.slug}-${local.platforms.sulfoxide.services.sos.slug}"
 
   platforms = {
 
@@ -101,6 +104,24 @@ locals {
       }
     }
 
+
+    sulfone = {
+      name = "Sulfone"
+      slug = "sulfone"
+      services = {
+        zinc = {
+          name        = "CyanPrint Registry"
+          slug        = "zinc"
+          description = "CyanPrint Registry for templates, processors and extensions"
+        }
+
+        argon = {
+          name        = "CyanPrint Frontend"
+          slug        = "argon"
+          description = "CyanPrint Frontend for CyanPrint Registry"
+        }
+      }
+    }
   }
 
   landscapes = {
@@ -126,13 +147,13 @@ locals {
     tauros = {
       name        = "Tauros"
       slug        = "tauros"
-      description = "Test environment"
+      description = "Local Development (Production Parity)"
     }
 
     absol = {
       name        = "Absol"
       slug        = "absol"
-      description = "Local Development (Production Parity)"
+      description = "Test environment"
 
     }
 
@@ -181,7 +202,12 @@ locals {
     }
     p = {
       (local.landscapes.entei.slug) = local.landscapes.entei.name
-
+    }
+    l = {
+      (local.landscapes.lapras.slug) = local.landscapes.lapras.name
+      (local.landscapes.tauros.slug) = local.landscapes.tauros.name
+      (local.landscapes.absol.slug)  = local.landscapes.absol.name
+      (local.landscapes.pinsir.slug) = local.landscapes.pinsir.name
     }
   }
 
