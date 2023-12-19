@@ -8,6 +8,8 @@ resource "digitalocean_kubernetes_cluster" "cluster" {
   auto_upgrade = true
   version      = data.digitalocean_kubernetes_versions.version.latest_version
 
+
+
   maintenance_policy {
     start_time = "00:00"
     day        = "sunday"
