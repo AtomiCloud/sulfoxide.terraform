@@ -2,6 +2,7 @@ version: "3"
 
 includes:
   setup: tasks/Taskfile.setup.yaml
+  kubectl: tasks/Taskfile.kubectl.yaml
   suicune:l0:
     taskfile: tasks/Taskfile.landscape.yaml
     vars:

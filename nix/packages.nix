@@ -32,6 +32,7 @@ let
 
           # dev
           git
+          doctl
 
           # main
           terraform
